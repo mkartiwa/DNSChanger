@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🛡 DNS Changer"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubah DNS melalui VPN – Android 5.1+"
+                android:textColor="#BBDEFB"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATUS VPN"
+                android:textColor="#757575"
+                android:textSize="11sp"
+                android:letterSpacing="0.1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- Indikator bulat -->
+                <View
+                    android:id="@+id/statusIndicator"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="#9E9E9E"
+                    android:layout_marginEnd="10dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VPN tidak aktif"
+                        android:textColor="#212121"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDnsInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#1E88E5"
+                        android:textSize="13sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- DNS Preset -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PILIH PRESET DNS"
+                android:textColor="#757575"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerPreset"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_bg" />
+        </LinearLayout>
+
+        <!-- Input DNS Manual -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KONFIGURASI DNS"
+                android:textColor="#757575"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DNS Utama (Primary)"
+                android:textColor="#424242"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etDns1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Contoh: 8.8.8.8"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DNS Cadangan (Secondary)"
+                android:textColor="#424242"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etDns2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Contoh: 8.8.4.4 (opsional)"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Auto Start -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/cbAutoStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Aktifkan otomatis setelah reboot"
+                android:textColor="#424242"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Tombol Toggle -->
+        <Button
+            android:id="@+id/btnToggle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#1E88E5"
+            android:text="START VPN"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Info Preset Populer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E3F2FD"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ℹ Preset DNS Populer"
+                android:textColor="#1565C0"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Google: 8.8.8.8 / 8.8.4.4 — Cepat &amp; Andal\n• Cloudflare: 1.1.1.1 / 1.0.0.1 — Privasi Tinggi\n• AdGuard: 94.140.14.14 — Blokir Iklan\n• Quad9: 9.9.9.9 — Blokir Malware"
+                android:textColor="#1565C0"
+                android:textSize="12sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
