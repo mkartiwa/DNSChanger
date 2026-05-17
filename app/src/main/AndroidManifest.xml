@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dnschanger.app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
@@ -16,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Main Activity -->
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +25,6 @@
             </intent-filter>
         </activity>
 
-        <!-- VPN Service - WAJIB untuk VpnService -->
         <service
             android:name=".service.DNSVpnService"
             android:permission="android.permission.BIND_VPN_SERVICE"
@@ -37,7 +34,6 @@
             </intent-filter>
         </service>
 
-        <!-- Boot Receiver untuk auto-start -->
         <receiver
             android:name=".service.BootReceiver"
             android:enabled="true"
